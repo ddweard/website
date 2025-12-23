@@ -1,7 +1,8 @@
 <?php
-function happyBirthday($first_name, $age) {
-    echo "Happy birthday dear {$first_name}<br>";
-    echo "You are {$age} years old!<br>";
-}
-happyBirthday("SpongeBob", 20);
+$username = " Bro Code ";
+$username = strtolower(trim($username));
+echo $username;
+$phone = "123-456-7890";
+$phone = str_replace("-", "", $phone);
+echo $phone; 
 ?>
