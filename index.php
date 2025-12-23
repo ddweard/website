@@ -1,17 +1,16 @@
 <form action="index.php" method="post">
-    <input type="radio" name="credit_card" value="Visa"> Visa<br>
-    <input type="radio" name="credit_card" value="MasterCard"> MasterCard<br>
-    <input type="radio" name="credit_card" value="American Express"> American Express<br>
-    <input type="submit" name="confirm" value="Confirm">
+    <input type="checkbox" name="foods[]" value="Pizza"> Pizza<br>
+    <input type="checkbox" name="foods[]" value="Hamburger"> Hamburger<br>
+    <input type="checkbox" name="foods[]" value="Taco"> Taco<br>
+    <input type="submit" name="submit" value="Submit">
 </form>
 
 <?php
-if (isset($_POST['confirm'])) {
-    $credit_card = $_POST['credit_card'] ?? null;
-    if ($credit_card != null) {
-        echo "You selected {$credit_card}.";
-    } else {
-        echo "Please make a selection.";
+if (isset($_POST['submit'])) {
+    if (isset($_POST['foods'])) {
+        foreach ($_POST['foods'] as $food) {
+            echo "You like {$food}<br>";
+        }
     }
 }
 ?>
