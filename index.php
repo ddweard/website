@@ -1,10 +1,13 @@
 <?php
-$foods = array("apple", "orange", "banana", "coconut");
-$foods[0] = "pineapple";
-array_push($foods, "kiwi");
-array_pop($foods);
-foreach ($foods as $food) {
-    echo $food . "<br>";
+$capitals = array(
+    "USA" => "Washington D.C.",
+    "Japan" => "Kyoto",
+    "South Korea" => "Seoul",
+    "India" => "New Delhi"
+);
+$capitals["USA"] = "Las Vegas";
+$capitals["China"] = "Beijing";
+foreach ($capitals as $key => $value) {
+    echo "{$key} = {$value}<br>";
 }
-echo "Number of foods: " . count($foods);
 ?>
