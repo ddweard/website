@@ -1,10 +1,9 @@
 <?php
-$age = 170;
-if ($age >= 18 && $age < 100) {
-    echo "You may enter the site.";
-} else if ($age >= 100) {
-    echo "You are too old to enter.";
+$temp = 25;
+$isSunny = true;
+if ($temp >= 0 && $temp <= 30 && $isSunny) {
+    echo "The weather is good.";
 } else {
-    echo "You must be 18+ to enter.";
+    echo "The weather is bad.";
 }
 ?>
