@@ -1,13 +1,20 @@
+<form action="index.php" method="post">
+    <label>Enter a country:</label><br>
+    <input type="text" name="country"><br>
+    <input type="submit" value="Submit">
+</form>
+
 <?php
 $capitals = array(
     "USA" => "Washington D.C.",
     "Japan" => "Kyoto",
     "South Korea" => "Seoul",
-    "India" => "New Delhi"
+    "India" => "New Delhi",
+    "China" => "Pekin"
 );
-$capitals["USA"] = "Las Vegas";
-$capitals["China"] = "Beijing";
-foreach ($capitals as $key => $value) {
-    echo "{$key} = {$value}<br>";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $country = $_POST['country'];
+    $capital = $capitals[$country] ?? "Capital not found.";
+    echo "The capital of {$country} is {$capital}.";
 }
 ?>
